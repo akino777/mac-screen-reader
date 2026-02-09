@@ -21,15 +21,40 @@ macOS ネイティブの MCP サーバー。画面をキャプチャし、Apple 
 ## Requirements / 必要条件
 
 - macOS 10.15 (Catalina) or later
-- Swift 6.2+ (Xcode 16.3+)
 - **Screen Recording permission** must be granted to the terminal or app running the server
+- Swift 6.2+ (Xcode 16.3+) only required if building from source
+
+---
+
+- macOS 10.15 (Catalina) 以降
+- ターミナルアプリに**画面収録権限**が必要
+- Swift 6.2+ (Xcode 16.3+) はソースからビルドする場合のみ必要
 
 ## Installation / インストール
 
-### Quick Install / 簡単インストール
+### Option 1: Binary Download (Recommended) / バイナリダウンロード（推奨）
+
+Download and install the pre-built binary:
+
+事前ビルド済みバイナリをダウンロード：
 
 ```bash
-git clone https://github.com/<YOUR_USERNAME>/mac-screen-reader.git
+# Create install directory / インストールディレクトリを作成
+mkdir -p ~/.local/bin
+
+# Download binary / バイナリをダウンロード
+curl -L https://github.com/akino777/mac-screen-reader/releases/download/v1.0.0/MacScreenReader -o ~/.local/bin/MacScreenReader
+
+# Make executable / 実行可能にする
+chmod +x ~/.local/bin/MacScreenReader
+```
+
+Or download from [Releases](https://github.com/akino777/mac-screen-reader/releases) page.
+
+### Option 2: Build from Source / ソースからビルド
+
+```bash
+git clone https://github.com/akino777/mac-screen-reader.git
 cd mac-screen-reader
 ./install.sh
 ```
@@ -37,15 +62,11 @@ cd mac-screen-reader
 ### Manual Build / 手動ビルド
 
 ```bash
-git clone https://github.com/<YOUR_USERNAME>/mac-screen-reader.git
+git clone https://github.com/akino777/mac-screen-reader.git
 cd mac-screen-reader
 swift build -c release
 cp .build/release/MacScreenReader ~/.local/bin/
 ```
-
-### Download Binary / バイナリダウンロード
-
-Download the latest universal binary from [Releases](https://github.com/<YOUR_USERNAME>/mac-screen-reader/releases).
 
 ## Setup / 設定
 
@@ -59,15 +80,21 @@ claude mcp add mac-screen-reader ~/.local/bin/MacScreenReader
 
 Add the following to your Claude Desktop config (`~/Library/Application Support/Claude/claude_desktop_config.json`):
 
+Claude Desktop の設定ファイルに以下を追加：
+
 ```json
 {
   "mcpServers": {
     "mac-screen-reader": {
-      "command": "/Users/<YOUR_USERNAME>/.local/bin/MacScreenReader"
+      "command": "/Users/YOUR_USERNAME/.local/bin/MacScreenReader"
     }
   }
 }
 ```
+
+Replace `YOUR_USERNAME` with your actual macOS username.
+
+`YOUR_USERNAME` を実際の macOS ユーザー名に置き換えてください。
 
 ### Screen Recording Permission / 画面収録権限
 
