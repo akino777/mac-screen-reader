@@ -82,8 +82,20 @@ cp .build/release/MacScreenReader ~/.local/bin/
 
 ### Claude Code
 
+**If installed via binary or build from source:**
+
+バイナリまたはソースからビルドした場合：
+
 ```bash
 claude mcp add mac-screen-reader ~/.local/bin/MacScreenReader
+```
+
+**If installed via Mint:**
+
+Mint でインストールした場合：
+
+```bash
+claude mcp add mac-screen-reader ~/.mint/bin/MacScreenReader
 ```
 
 ### Claude Desktop
@@ -92,11 +104,29 @@ Add the following to your Claude Desktop config (`~/Library/Application Support/
 
 Claude Desktop の設定ファイルに以下を追加：
 
+**If installed via binary or build from source:**
+
+バイナリまたはソースからビルドした場合：
+
 ```json
 {
   "mcpServers": {
     "mac-screen-reader": {
       "command": "/Users/YOUR_USERNAME/.local/bin/MacScreenReader"
+    }
+  }
+}
+```
+
+**If installed via Mint:**
+
+Mint でインストールした場合：
+
+```json
+{
+  "mcpServers": {
+    "mac-screen-reader": {
+      "command": "/Users/YOUR_USERNAME/.mint/bin/MacScreenReader"
     }
   }
 }
