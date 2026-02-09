@@ -43,7 +43,7 @@ Download and install the pre-built binary:
 mkdir -p ~/.local/bin
 
 # Download binary / バイナリをダウンロード
-curl -L https://github.com/akino777/mac-screen-reader/releases/download/v1.0.0/MacScreenReader -o ~/.local/bin/MacScreenReader
+curl -L https://github.com/akino777/mac-screen-reader/releases/download/v1.0.1/MacScreenReader -o ~/.local/bin/MacScreenReader
 
 # Make executable / 実行可能にする
 chmod +x ~/.local/bin/MacScreenReader
