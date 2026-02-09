@@ -8,6 +8,12 @@ let package = Package(
     platforms: [
         .macOS(.v10_15)
     ],
+    products: [
+        .executable(
+            name: "MacScreenReader",
+            targets: ["MacScreenReader"]
+        )
+    ],
     targets: [
         // Targets are the basic building blocks of a package, defining a module or a test suite.
         // Targets can depend on other targets in this package and products from dependencies.

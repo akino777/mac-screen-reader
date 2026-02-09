@@ -51,7 +51,17 @@ chmod +x ~/.local/bin/MacScreenReader
 
 Or download from [Releases](https://github.com/akino777/mac-screen-reader/releases) page.
 
-### Option 2: Build from Source / ソースからビルド
+### Option 2: Install with Mint / Mint でインストール
+
+If you have [Mint](https://github.com/yonaskolb/Mint) installed:
+
+[Mint](https://github.com/yonaskolb/Mint) をインストール済みの場合：
+
+```bash
+mint install akino777/mac-screen-reader
+```
+
+### Option 3: Build from Source / ソースからビルド
 
 ```bash
 git clone https://github.com/akino777/mac-screen-reader.git
