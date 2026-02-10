@@ -122,7 +122,7 @@ func performScreenOCR() -> String {
     do {
         try handler.perform([request])
     } catch {
-        return "Error: Failed to start OCR engine / OCRエンジンの起動に失敗 - \(error.localizedDescription)"
+        return "Error: Failed to start OCR engine. Please check Screen Recording permissions. / エラー: OCRエンジンの起動に失敗しました。「画面収録」権限を確認してください。"
     }
 
     semaphore.wait()  // 処理完了を待つ
@@ -236,6 +236,6 @@ while let line = readLine() {
         }
 
     } catch {
-        log("JSON Parse Error: \(error)")
+        log("JSON Parse Error: Invalid request format")
     }
 }
